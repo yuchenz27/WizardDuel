@@ -157,6 +157,11 @@ public class App : MonoBehaviour, INetworkRunnerCallbacks
         return player;
     }
 
+    public void StartArena()
+    {
+        _runner.SetActiveScene("Arena");
+    }
+
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef playerRef)
     {
         Debug.Log($"Player {playerRef} Joined!");

@@ -8,8 +8,6 @@ public class Player : NetworkBehaviour
     [Networked] public NetworkString<_32> Name { get; set; }
     [Networked] public NetworkBool Ready { get; set; }
 
-    private PlayerRef _playerRef;
-
     public override void Spawned()
     {
         App.Instance.SetPlayer(Object.InputAuthority, this);
@@ -18,5 +16,10 @@ public class Player : NetworkBehaviour
     public void GetRandomName()
     {
         Name = "Jena";
+    }
+
+    public PlayerRef GetPlayerRef()
+    {
+        return Object.InputAuthority;
     }
 }

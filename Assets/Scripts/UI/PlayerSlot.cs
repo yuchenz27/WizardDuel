@@ -15,7 +15,7 @@ public class PlayerSlot : MonoBehaviour
 
     [SerializeField] private TMP_Text _team;
 
-    public void Init(string playerName, string magicClass, int ping, bool ready, string team)
+    public void Init(string playerName, string magicClass, double ping, bool ready, string team)
     {
         _playerName.text = playerName;
         _class.text = magicClass;

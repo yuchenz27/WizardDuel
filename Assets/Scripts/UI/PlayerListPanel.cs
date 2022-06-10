@@ -30,7 +30,8 @@ public class PlayerListPanel : MonoBehaviour
             var newPlayerSlot = Instantiate(_playerSlotPrefab);
             newPlayerSlot.transform.localScale = Vector3.one;
 
-            newPlayerSlot.GetComponent<PlayerSlot>().Init(player.Name.Value, "Unknown", 0, player.Ready, "Unknown");
+            double playerRtt = App.Instance.Runner.GetPlayerRtt(player.GetPlayerRef());
+            newPlayerSlot.GetComponent<PlayerSlot>().Init(player.Name.Value, "Unknown", playerRtt, player.Ready, "Unknown");
             if (player.Ready)
                 readyCount++;
 
@@ -54,5 +55,10 @@ public class PlayerListPanel : MonoBehaviour
             App.Instance.GetPlayer().Ready = true;
             _readyButtonText.text = "Cancel";
         }
+    }
+
+    public void StartGame()
+    {
+        App.Instance.StartArena();
     }
 }
