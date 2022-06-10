@@ -37,6 +37,8 @@ public class App : MonoBehaviour, INetworkRunnerCallbacks
 
     public ICollection<Player> Players => _players.Values;
 
+    public NetworkRunner Runner => _runner;
+
     private NetworkRunner _runner;
 
     private NetworkSceneManagerBase _loader;
@@ -173,7 +175,7 @@ public class App : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef playerRef)
     {
-
+        
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
